@@ -27,6 +27,12 @@ En mode webhook, copier l'adresse affichée dans l'accès API du hub et saisir i
 
 La clé API et le secret du webhook sont **chiffrés** (AES-256-GCM, clé dérivée des sels de `wp-config.php`). Si les sels changent, ressaisir les deux secrets.
 
+## Signaler une erreur du hub
+
+Quand le hub refuse ou échoue une requête, le message affiché (test de connexion, colonne « Erreur » des envois) se termine par `[X-Request-Id : …]`.
+Citer cet identifiant au support : il retrouve l'appel exact dans l'**Activité API** du hub (recherche par identifiant de requête). Une panne réseau
+n'a pas d'identifiant, puisque le hub n'a pas répondu.
+
 ## Limites connues (v1)
 
 - Seuls les fichiers du thème actif sont traduits (pas les plugins, pas le cœur de WordPress).

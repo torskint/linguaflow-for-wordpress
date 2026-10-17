@@ -49,14 +49,14 @@ class WpHubClient implements HubClient
 				return null;
 			}
 
-			throw HubException::fromHub(409, $error['error']['code'] ?? null, (string) ($error['error']['message'] ?? ''));
+			throw HubException::fromHub(409, $error['error']['code'] ?? null, (string) ($error['error']['message'] ?? ''), $this->requestId($response['headers'], $error));
 		}
 
 		if ($response['status'] < 200 || $response['status'] >= 300) {
 			$error = json_decode((string) @file_get_contents($path), true);
 			@unlink($path);
 
-			throw HubException::fromHub($response['status'], $error['error']['code'] ?? null, (string) ($error['error']['message'] ?? ''));
+			throw HubException::fromHub($response['status'], $error['error']['code'] ?? null, (string) ($error['error']['message'] ?? ''), $this->requestId($response['headers'], $error));
 		}
 
 		return ['path' => $path, 'missing' => array_values(array_filter(explode(',', (string) ($response['headers']['x-missing-languages'] ?? ''))))];
@@ -121,9 +121,21 @@ class WpHubClient implements HubClient
 		$json = empty($args['stream']) ? json_decode((string) wp_remote_retrieve_body($reply), true) : null;
 
 		if ($check && ($status < 200 || $status >= 300)) {
-			throw HubException::fromHub($status, is_array($json) ? ($json['error']['code'] ?? null) : null, is_array($json) ? (string) ($json['error']['message'] ?? '') : '');
+			throw HubException::fromHub($status, is_array($json) ? ($json['error']['code'] ?? null) : null, is_array($json) ? (string) ($json['error']['message'] ?? '') : '', $this->requestId($headers, $json));
 		}
 
 		return ['status' => $status, 'headers' => $headers, 'json' => is_array($json) ? $json : null];
+	}
+
+	/**
+	 * Identifiant de la requête donné par le hub : l'en-tête X-Request-Id, ou à défaut `error.request_id` du corps.
+	 *
+	 * @param  array<string, string>  $headers  en-têtes en minuscules
+	 */
+	private function requestId(array $headers, mixed $json): ?string
+	{
+		$id = $headers['x-request-id'] ?? (is_array($json) ? ($json['error']['request_id'] ?? null) : null);
+
+		return is_string($id) && $id !== '' ? $id : null;
 	}
 }
