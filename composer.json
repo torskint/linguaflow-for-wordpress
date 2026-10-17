@@ -1,0 +1,24 @@
+{
+	"name": "torskint/linguaflow-for-wordpress",
+	"description": "Linguaflow For WordPress : client WordPress du Translation Hub (thème actif, .po/.pot, wp-cron, webhook).",
+	"type": "wordpress-plugin",
+	"license": "proprietary",
+	"require": {
+		"php": ">=8.1",
+		"ext-zip": "*",
+		"ext-openssl": "*"
+	},
+	"require-dev": {
+		"phpunit/phpunit": "^10.5"
+	},
+	"autoload": {
+		"psr-4": {
+			"Torskint\\LinguaFlowWp\\": "src/"
+		}
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"Torskint\\LinguaFlowWp\\Tests\\": "tests/"
+		}
+	}
+}

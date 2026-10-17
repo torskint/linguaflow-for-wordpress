@@ -1,0 +1,152 @@
+/* Écran d'administration de Linguaflow For WordPress : cartes, champs, puces de langues et bouton verrouillé avec indicateur. */
+
+.lfw {
+	--lfw-primary: #0e7490;
+	--lfw-border: #d0d7de;
+	--lfw-bg: #f6f8fa;
+	--lfw-text: #1d2327;
+}
+
+.lfw-theme {
+	color: #50575e;
+	margin: 0 0 16px;
+}
+
+.lfw-card {
+	background: #fff;
+	border: 1px solid var(--lfw-border);
+	border-radius: 8px;
+	margin: 0 0 16px;
+	padding: 16px;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.lfw-card h2 {
+	margin-top: 0;
+}
+
+.lfw-field {
+	display: block;
+	margin: 0 0 16px;
+	padding: 0;
+	border: 0;
+}
+
+.lfw-field > span,
+.lfw-field > legend {
+	display: block;
+	font-weight: 600;
+	margin: 0 0 6px;
+	padding: 0;
+}
+
+.lfw-field input[type="text"],
+.lfw-field input[type="url"],
+.lfw-field input[type="password"] {
+	width: 100%;
+	max-width: 100%;
+}
+
+.lfw-choices,
+.lfw-chips,
+.lfw-row {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	align-items: center;
+}
+
+.lfw-choice,
+.lfw-chip {
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+	cursor: pointer;
+}
+
+.lfw-chip input {
+	position: absolute;
+	opacity: 0;
+	pointer-events: none;
+}
+
+.lfw-chip span {
+	display: inline-block;
+	padding: 4px 12px;
+	border: 1px solid var(--lfw-border);
+	border-radius: 999px;
+	background: var(--lfw-bg);
+	color: var(--lfw-text);
+}
+
+.lfw-chip input:checked + span {
+	background: var(--lfw-primary);
+	border-color: var(--lfw-primary);
+	color: #fff;
+}
+
+.lfw-chip input:focus-visible + span {
+	outline: 2px solid var(--lfw-primary);
+	outline-offset: 2px;
+}
+
+.lfw-choice span {
+	margin-left: 6px;
+}
+
+.lfw-row form {
+	margin: 0;
+}
+
+.lfw-test-result {
+	font-weight: 600;
+}
+
+.lfw-test-result.is-ok {
+	color: #1a7f37;
+}
+
+.lfw-test-result.is-error {
+	color: #b32d2e;
+}
+
+/* Bouton verrouillé pendant une action lente : l'indicateur remplace le curseur de la souris */
+.lfw-spinner {
+	display: none;
+	width: 12px;
+	height: 12px;
+	margin-right: 6px;
+	border: 2px solid currentColor;
+	border-right-color: transparent;
+	border-radius: 50%;
+	vertical-align: -2px;
+	animation: lfw-spin 0.7s linear infinite;
+}
+
+.button.is-loading {
+	pointer-events: none;
+	opacity: 0.75;
+}
+
+.button.is-loading .lfw-spinner {
+	display: inline-block;
+}
+
+@keyframes lfw-spin {
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+.lfw table {
+	width: 100%;
+}
+
+@media (min-width: 768px) {
+	.lfw-field input[type="text"],
+	.lfw-field input[type="url"],
+	.lfw-field input[type="password"] {
+		max-width: 480px;
+	}
+}

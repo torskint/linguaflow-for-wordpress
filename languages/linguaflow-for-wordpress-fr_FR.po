@@ -1,0 +1,150 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Linguaflow For WordPress 1.0.0\n"
+"Language: fr_FR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+msgid "TRAD_1"
+msgstr "Linguaflow For WordPress"
+
+msgid "TRAD_2"
+msgstr "Réglages"
+
+msgid "TRAD_3"
+msgstr "Adresse du hub"
+
+msgid "TRAD_4"
+msgstr "Clé API"
+
+msgid "TRAD_5"
+msgstr "Secret du webhook"
+
+msgid "TRAD_6"
+msgstr "Mode de livraison"
+
+msgid "TRAD_7"
+msgstr "Sondage périodique (wp-cron)"
+
+msgid "TRAD_8"
+msgstr "Notification du hub (webhook)"
+
+msgid "TRAD_9"
+msgstr "Langues cibles"
+
+msgid "TRAD_10"
+msgstr "Envoyer les textes manquants"
+
+msgid "TRAD_11"
+msgstr "Synchroniser maintenant"
+
+msgid "TRAD_12"
+msgstr "Envois"
+
+msgid "TRAD_13"
+msgstr "Référence"
+
+msgid "TRAD_14"
+msgstr "Statut"
+
+msgid "TRAD_15"
+msgstr "Envoyé le"
+
+msgid "TRAD_16"
+msgstr "Annuler"
+
+msgid "TRAD_17"
+msgstr "Aucun texte manquant."
+
+msgid "TRAD_18"
+msgstr "Envoi créé : %s"
+
+msgid "TRAD_19"
+msgstr "Connexion au hub réussie."
+
+msgid "TRAD_20"
+msgstr "Connexion au hub impossible : %s"
+
+msgid "TRAD_21"
+msgstr "Enregistrer"
+
+msgid "TRAD_22"
+msgstr "Thème traduit : %s"
+
+msgid "TRAD_23"
+msgstr "Langue source (code WordPress, par exemple fr_FR)"
+
+msgid "TRAD_24"
+msgstr "Autres langues (codes séparés par des virgules)"
+
+msgid "TRAD_25"
+msgstr "Tester la connexion"
+
+msgid "TRAD_26"
+msgstr "Réglages enregistrés."
+
+msgid "TRAD_27"
+msgstr "Aucun envoi pour le moment."
+
+msgid "TRAD_28"
+msgstr "Langues"
+
+msgid "TRAD_29"
+msgstr "Textes"
+
+msgid "TRAD_30"
+msgstr "En attente d'envoi"
+
+msgid "TRAD_31"
+msgstr "En cours"
+
+msgid "TRAD_32"
+msgstr "Fusionné"
+
+msgid "TRAD_33"
+msgstr "Échec"
+
+msgid "TRAD_34"
+msgstr "Annulé"
+
+msgid "TRAD_35"
+msgstr "Synchronisation terminée : %s envoi(s) traité(s)."
+
+msgid "TRAD_36"
+msgstr "Envoi annulé."
+
+msgid "TRAD_37"
+msgstr "Envoi mis en file d'attente, il repartira à la prochaine synchronisation : %s"
+
+msgid "TRAD_38"
+msgstr "Un envoi identique est déjà en cours : %s"
+
+msgid "TRAD_39"
+msgstr "Aucun fichier de langue source (.po ou .pot) trouvé dans le thème actif."
+
+msgid "TRAD_40"
+msgstr "Adresse du webhook à donner au hub : %s"
+
+msgid "TRAD_41"
+msgstr "Valeur déjà enregistrée : laisser vide pour la conserver"
+
+msgid "TRAD_43"
+msgstr "L'adresse du hub est invalide (https obligatoire)."
+
+msgid "TRAD_44"
+msgstr "La langue source est invalide."
+
+msgid "TRAD_45"
+msgstr "Droits insuffisants."
+
+msgid "TRAD_46"
+msgstr "Erreur"
+
+msgid "TRAD_47"
+msgstr "Renseignez d'abord l'adresse du hub et la clé API."
+
+msgid "TRAD_48"
+msgstr "Choisissez au moins une langue cible."
+
